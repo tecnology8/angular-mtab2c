@@ -1,0 +1,14 @@
+<div [ngSwitch]="nameList.length < 5">
+<div *ngSwitchCase="true">
+  <input type="text" [(ngModel)]="inputName">
+  <button (click)="addName()">Add Name</button>
+</div>
+<div *ngSwitchCase="false">
+  <p>You can't add more names
+</div>
+
+</div>
+<p *ngFor="let item of nameList; index as i" (click)="onNameClick()">
+  <!-- {{i}} - Hello {{item | uppercase}}! -->
+  {{i}} - Hello {{item | upperCapital}}!
+  </p>
